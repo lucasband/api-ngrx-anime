@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Api-ngrx-anime:build:production"
+              "buildTarget": "Api-ngrx-anime:build:production"
             },
             "development": {
-              "browserTarget": "Api-ngrx-anime:build:development"
+              "buildTarget": "Api-ngrx-anime:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Api-ngrx-anime:build"
+            "buildTarget": "Api-ngrx-anime:build"
           }
         },
         "test": {
