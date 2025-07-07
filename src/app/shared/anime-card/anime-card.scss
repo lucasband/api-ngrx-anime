@@ -1,0 +1,17 @@
+.card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100px;
+    border-radius: 6px;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
