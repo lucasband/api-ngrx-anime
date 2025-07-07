@@ -11,6 +11,8 @@ import { AnimeListService } from './services/anime-list';
 export class App {
   constructor(private animeService: AnimeListService) {}
 
+  //Teste de consumo de api 
+
   // ngOnInit() {
   //   this.animeService.searchAnime('Naruto').subscribe({
   //     next: (result) => {
@@ -21,4 +23,5 @@ export class App {
   //     },
   //   });
   // }
+  
 }
