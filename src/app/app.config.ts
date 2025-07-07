@@ -1,9 +1,33 @@
-import { ApplicationConfig } from '@angular/core';
+import {
+  ApplicationConfig,
+  provideZonelessChangeDetection,
+  provideBrowserGlobalErrorListeners,
+  inject,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+
+import { provideApollo } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache } from '@apollo/client/core';
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
+    provideRouter(routes),
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(),
+
+    provideApollo(() => {
+      const httpLink = inject(HttpLink);
+      return {
+        link: httpLink.create({ uri: 'https://graphql.anilist.co' }),
+        cache: new InMemoryCache(),
+      };
+    }),
+  ],
 };
