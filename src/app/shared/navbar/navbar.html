@@ -1,3 +1,21 @@
-<nav>
-    
+<nav class="navbar">
+  <div class="navbar__brand">
+    <img src="assets/logo.webp" alt="Logo" class="navbar__logo" />
+    <span class="navbar__title">AnimeList</span>
+  </div>
+
+  <div class="navbar__search">
+    <input
+      type="text"
+      placeholder="Buscar..."
+      class="navbar__search-input"
+    />
+    <button class="navbar__search-btn">🔍</button>
+  </div>
+
+  <div class="navbar__links">
+    <a routerLink="/" routerLinkActive="active">Início</a>
+    <a routerLink="/catalogo" routerLinkActive="active">Catálogo</a>
+    <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
+  </div>
 </nav>
